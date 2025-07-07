@@ -140,6 +140,13 @@ app_license = "mit"
 # 	}
 # }
 
+# before toDo doctype is created, call this function 
+doc_events = {
+    'ToDo': {
+        "before_insert": "rentals.api.throw_emoji"
+    }
+}
+
 # Scheduled Tasks
 # ---------------
 
@@ -160,6 +167,14 @@ app_license = "mit"
 # 		"rentals.tasks.monthly"
 # 	],
 # }
+
+scheduler_events = {
+    "cron": {
+        "20 13 * * 4" : [ # format from crontab.guru
+            "rentals.api.send_reminder"
+        ]
+    }
+}
 
 # Testing
 # -------
