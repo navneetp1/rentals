@@ -1,13 +1,25 @@
 # Copyright (c) 2025, Navneet and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class Driver(Document):
 	def before_save(self):
-		self.full_name = f"{self.first_name} {self.last_name}"
+		if self.last_name == "":
+			self.full_name = f"{self.first_name}"
+		else:
+			self.full_name = f"{self.first_name} {self.last_name}"
 	
-	def send_alert(self):
-		print("sending message")
+	# def send_alert(self):
+	# 	print("sending message")
+
+	def on_trash(self):
+		available_driver = frappe.db.exists("Ride Booking", {
+			"driver": self.full_name,
+			"docstatus": ("<", 2)
+		})
+
+		if available_driver:
+			frappe.throw("Can't delete a driver with an active booking.")

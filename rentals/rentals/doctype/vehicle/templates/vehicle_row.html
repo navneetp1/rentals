@@ -1,10 +1,14 @@
-<body>
-	<div>
-	<a href="/{{ doc.route |e }}">{{ (doc.title or doc.name) |e }}</a>
+<div class="container my-5 d-flex flex-column align-items-center">
+  <div class="card shadow-sm mb-4" style="width: 100%; max-width: 600px;">
+    <img src="{{ doc.vehicle_image }}" class="card-img-top" alt="{{ doc.title }}">
+    <div class="card-body text-center">
+      <h5 class="card-title">
+        <a href="/{{ doc.route |e }}" class="text-decoration-none text-dark">
+          {{ doc.title or doc.name }}
+        </a>
+      </h5>
+      <p class="card-text text-muted">Explore your adventure-ready vehicle today.</p>
+      <a href="/{{ doc.route |e }}" class="btn btn-primary mt-2">View Details</a>
+    </div>
+  </div>
 </div>
-	<script src="script.js"></script>
-
-</body>
-
-<!-- this is a sample default list template -->
-

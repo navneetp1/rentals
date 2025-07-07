@@ -11,6 +11,7 @@
   "vehicle",
   "column_break_iagi",
   "driver",
+  "status",
   "section_break_nrun",
   "items",
   "section_break_wvpp",
@@ -88,13 +89,20 @@
    "fieldtype": "Link",
    "label": "Vehicle",
    "options": "Vehicle"
+  },
+  {
+   "default": "Available",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Booked\nAvailable"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-07-04 12:31:10.125212",
+ "modified": "2025-07-07 17:47:35.283259",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Ride Booking",

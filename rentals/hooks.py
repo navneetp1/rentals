@@ -8,6 +8,18 @@ app_license = "mit"
 # Apps
 # ------------------
 
+
+fixtures = [
+     {  
+        "dt": "Vehicle Type",
+        "filters": [
+            [
+            "is_standard", "=", 1
+            ]
+        ]
+     }
+]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
@@ -145,7 +157,7 @@ doc_events = {
     'ToDo': {
         "before_insert": "rentals.api.throw_emoji"
     }
-}
+} 
 
 # Scheduled Tasks
 # ---------------
@@ -169,7 +181,7 @@ doc_events = {
 # }
 
 scheduler_events = {
-    "cron": {
+    "c ron": {
         "20 13 * * 4" : [ # format from crontab.guru
             "rentals.api.send_reminder"
         ]

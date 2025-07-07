@@ -14,6 +14,14 @@ frappe.ui.form.on("Ride Order", {
                 frm.save()
             }, "Actions")
         }
+
+        frm.set_query('vehicle', function (){
+            return {
+                'filters': {
+                    'status': 'Active'
+                }
+            }
+        })
         
 	},
     status: function(frm){

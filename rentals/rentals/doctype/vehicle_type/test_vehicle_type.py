@@ -13,12 +13,10 @@ IGNORE_TEST_RECORD_DEPENDENCIES = []  # eg. ["User"]
 
 
 
-class IntegrationTestMyDoctype(IntegrationTestCase):
+class IntegrationTestVehicleType(IntegrationTestCase):
 	"""
-	Integration tests for MyDoctype.
+	Integration tests for VehicleType.
 	Use this class for testing interactions between multiple components.
 	"""
 
 	pass
-
-

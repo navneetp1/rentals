@@ -1,0 +1,25 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/rentals/css/test.css">
+</head>
+<body style="color: antiquewhite;">
+    <div class="container text-center my-5">
+        <h1 class="display-4 font-weight-bold text-primary">Welcome to Van Life Rental Service</h1>
+        <h3 class="mt-3 text-muted">Get your desired rental vehicle and go for an adventure...</h3>
+        <a href="/book-a-ride/new" class="btn btn-lg btn-success mt-4">Order a Ride Now</a>
+        <br>
+        <br>
+        <br>
+        <a href="/vehicles" class="btn btn-lg btn-dark mt-4">List of Available Cars</a>
+        
+    </div>
+</body>
+</html>
+
+{% endblock %}

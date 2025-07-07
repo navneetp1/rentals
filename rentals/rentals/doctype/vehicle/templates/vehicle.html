@@ -1,10 +1,18 @@
 {% extends "templates/web.html" %}
+
 {% block page_content %}
-    <h1>{{ doc.title }}</h1>
-    <h2>Color: {{ doc.color }}</h2>
-    <img src="{{ doc.vehicle_image }}" alt="Image of {{ doc.title }}">
+<div class="container my-5">
+  <div class="card mx-auto shadow-sm" style="max-width: 700px;">
+    <img src="{{ doc.vehicle_image }}" class="card-img-top img-fluid" alt="Image of {{ doc.title }}">
 
-    <a class="btn btn-info" href="/book-a-ride/new?vehicle={{ doc.name }}">Book Ride Now</a>
+    <div class="card-body text-center">
+      <h1 class="card-title text-primary font-weight-bold">{{ doc.title }}</h1>
+      <h4 class="text-muted mb-3">Color: {{ doc.color }}</h4>
+
+      <a class="btn btn-info btn-lg mt-3" href="/book-a-ride/new?vehicle={{ doc.name }}">
+        🚐 Book Ride Now
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock %}
-
-<!-- this is a sample default web page template -->
