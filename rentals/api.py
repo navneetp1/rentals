@@ -7,7 +7,7 @@ def get_message():
     return "This is a Message from Custom API"
 
 def throw_emoji(doc, event):
-    frappe.throw('😭')
+    frappe.throw('😭Hey')
 
 
 @frappe.whitelist()
@@ -37,3 +37,4 @@ def get_phone_numbers():
 def count_total_drivers():
     data = frappe.db.count("Driver")
     return data
+

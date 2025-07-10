@@ -58,13 +58,14 @@
    "fieldname": "vehicle",
    "fieldtype": "Link",
    "label": "Vehicle",
+   "link_filters": "[[\"Vehicle\",\"status\",\"=\",\"Active\"]]",
    "options": "Vehicle"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-04 10:44:31.903882",
+ "modified": "2025-07-08 14:34:40.725896",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Ride Order",

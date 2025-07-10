@@ -15,13 +15,13 @@ frappe.ui.form.on("Ride Order", {
             }, "Actions")
         }
 
-        frm.set_query('vehicle', function (){
-            return {
-                'filters': {
-                    'status': 'Active'
-                }
-            }
-        })
+        // frm.set_query('vehicle', function (){
+        //     return {
+        //         'filters': {
+        //             'status': 'Active'
+        //         }
+        //     }
+        // })
         
 	},
     status: function(frm){

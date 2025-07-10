@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "format:DR-{####}",
  "creation": "2025-07-03 17:57:18.263060",
@@ -14,7 +15,11 @@
   "phone_number",
   "license_number",
   "profile_photo",
-  "rating"
+  "rating",
+  "section_break_wkok",
+  "is_published",
+  "column_break_ined",
+  "route"
  ],
  "fields": [
   {
@@ -54,21 +59,42 @@
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nBooked"
+  },
+  {
    "fieldname": "rating",
    "fieldtype": "Rating",
    "label": "Rating"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Available\nBooked"
+   "fieldname": "section_break_wkok",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "is Published?"
+  },
+  {
+   "fieldname": "column_break_ined",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
  "grid_page_length": 50,
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
- "modified": "2025-07-07 18:14:11.891421",
+ "modified": "2025-07-08 12:42:35.300662",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Driver",
@@ -88,6 +114,7 @@
    "write": 1
   }
  ],
+ "route": "drivers",
  "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "creation",

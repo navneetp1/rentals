@@ -7,6 +7,13 @@ frappe.ui.form.on("Vehicle", {
 	refresh(frm) {
 	},
 	get_summary(frm){
-		frm.get_field("summary").$wrapper.append("<h1>Hey, This is your Barcode</h1>") 
+		if (!frm.__flag){
+			frm.get_field("summary").$wrapper.append("<h1>Hey, This is your Barcode</h1>") 
+			frm.__flag = true;
+		}
+		else{
+			frm.get_field("summary").$wrapper.empty();
+			frm.__flag = false;
+		}
 	},
 });

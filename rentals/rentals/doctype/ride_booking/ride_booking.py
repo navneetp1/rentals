@@ -33,22 +33,25 @@ class RideBooking(Document):
 	# 	self.total_amount = self.rate * self.distance
 
 	def on_submit(self):
-		frappe.db.set_value('vehicle', self.vehicle, 'status', 'Booked')
+		frappe.db.set_value('Vehicle', self.vehicle, 'status', 'Booked')
 	
 	def on_cancel(self):
-		frappe.db.set_value('vehicle', self.vehicle, 'status', 'Available')
+		frappe.db.set_value('Vehicle', self.vehicle, 'status', 'Available')
 
-	def before_submit(self):
-		available_driver = frappe.db.get_list("Driver", filters={
-			'rating': (">", 3.5),
-			'status': 'Available'
-		},
-			fields=["full_name"])
+	def before_save(self):
+		if self.auto_assign == 1:
+			available_driver = frappe.db.get_list("Driver", pluck="full_name", filters={
+				'rating': (">", 0.6),
+				'status': 'Available'
+			})
 
-		if not available_driver:
-			frappe.throw('We couldn"t assign any good drivers to you as they all are booked for now. Please choose with caution')
 
-		self.driver = available_driver[0].full_name
-		frappe.db.set_value("Driver", self.driver, 'status', 'Booked')
+			if not available_driver:
+				frappe.throw('We couldn"t assign any good drivers to you as they all are booked for now. Please choose with caution')
+
+			self.driver = available_driver[0]
+			frappe.db.set_value("Driver", self.driver, 'status', 'Booked')
+		else:
+			frappe.throw("You need to choose a driver if haven't selected auto assign.")
 
 	
