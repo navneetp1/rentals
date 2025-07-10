@@ -27,12 +27,13 @@ frappe.ui.form.on("Aadhar User", {
     },
     show_unmasked(frm){
         frappe.call({
-          method: 'rentals.rentals.doctype.aadhar_user.aadhar_user.get_decrypted_aadhar',
+          method: 'rentals.rentals.doctype.aadhar_user.aadhar_user.get_decrypted_aadhar', // pass just the decrypted function
           args: {
             docname: frm.doc.name
           },
           callback: function(r){
             if (r.message){
+                  console.log(r);
                   frm.fields_dict.aadhar_number.$wrapper.html(`<div class="form-control">${r.message}</div>`);
                   frm.__aadhar_masked = false;
             }

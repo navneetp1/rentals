@@ -11,8 +11,10 @@ class AadharUser(Document):
 	def validate(self):
 		if not self.aadhar_number:
 			frappe.throw("Aadhar Number can't be empty")
-		elif len(self.aadhar_number) != 12:
+		if len(self.aadhar_number) != 12:
 			frappe.throw(f"Aadhar Number should be 12 characters long, Current length: {len(self.aadhar_number)}")
+		if self.aadhar_number[0] in ['1', '2']:
+			frappe.throw(f'Aadhar shouldn"t begin with 1 or 2')
 
 		# encryption
 		self.aadhar_encryption()

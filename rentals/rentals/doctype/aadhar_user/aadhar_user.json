@@ -20,7 +20,9 @@
   {
    "fieldname": "aadhar_number",
    "fieldtype": "Data",
-   "label": "Aadhar Number"
+   "in_list_view": 1,
+   "label": "Aadhar Number",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_yalz",
@@ -37,7 +39,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-07-10 00:20:45.906288",
+ "modified": "2025-07-10 11:09:15.845854",
  "modified_by": "Administrator",
  "module": "Rentals",
  "name": "Aadhar User",
@@ -71,5 +73,6 @@
  "row_format": "Dynamic",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }
